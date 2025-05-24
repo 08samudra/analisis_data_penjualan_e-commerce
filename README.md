@@ -10,23 +10,24 @@ Ikuti langkah-langkah berikut untuk menyiapkan dan menjalankan proyek ini secara
 
 ### 1. Kloning Repositori
 
-Buka terminal di VS Code (Terminal > New Terminal atau \`Ctrl + Shift + \`\`), lalu jalankan:
+Buka terminal pada PC atau Laptop (Windows Win + R, ketik "cmd" dan tekan Enter) (MacOS tekan Command + Space, ketik "Terminal", dan tekan Enter) lalu jalankan:
 
 ```bash
 git clone https://github.com/08samudra/analisis_data_penjualan_e-commerce.git
 ```
 
-Buka folder proyek:
+Setelah proses cloning selesai, buka folder proyek secara otomatis di VS Code dengan perintah berikut:
 
 ```bash
-cd analisis_data_penjualan_e-commerce
+code analisis_data_penjualan_e-commerce
 ```
 
+Setelah itu tekan CTRL+` untuk membuka terminal pada folder proyek di dalam VS Code.
 ---
 
 ### 2. Buat dan Aktifkan Virtual Environment
 
-**Windows (PowerShell):**
+**Windows:**
 
 ```bash
 python -m venv .venv
@@ -59,24 +60,7 @@ Pastikan virtual environment sudah aktif. Kemudian install seluruh library yang 
 ```bash
 pip install -r requirements.txt
 ```
-
-Jika kamu belum memiliki file `requirements.txt`, kamu bisa membuatnya dengan perintah berikut (opsional):
-
-```bash
-pip freeze > requirements.txt
-```
-
----
-
-### 4. Siapkan Data Gabungan (`all_data.csv`)
-
-Di direktori utama proyek, jalankan skrip berikut:
-
-```bash
-python create_all_data.py
-```
-
-File `all_data.csv` akan otomatis dibuat di dalam folder `dashboard/`.
+Dan tunggu hingga proses selesai.
 
 ---
 
