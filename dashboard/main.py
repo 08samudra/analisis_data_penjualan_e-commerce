@@ -6,27 +6,38 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np # Untuk operasi numerik, misal nanmean
+from pathlib import Path
 
 # --- 1. Konfigurasi Halaman Streamlit ---
 st.set_page_config(layout="wide", page_title="Dashboard Analisis Penjualan E-commerce", initial_sidebar_state="expanded")
 
 # --- 2. Fungsi untuk Memuat Data (dengan cache agar lebih cepat) ---
+# Folder tempat file main.py berada (dashboard)
+BASE_DIR = Path(__file__).resolve().parent
+
+# Folder datasets ada di satu level atas dashboard
+DATASET_DIR = BASE_DIR.parent / "datasets"
+
 @st.cache_data
 def load_data():
-    """Memuat semua dataset yang diperlukan dari subdirektori 'datasets/'."""
-    customers_df = pd.read_csv('datasets/customers_dataset.csv')
-    geolocation_df = pd.read_csv('datasets/geolocation_dataset.csv')
-    order_items_df = pd.read_csv('datasets/order_items_dataset.csv')
-    order_payments_df = pd.read_csv('datasets/order_payments_dataset.csv')
-    order_reviews_df = pd.read_csv('datasets/order_reviews_dataset.csv')
-    orders_df = pd.read_csv('datasets/orders_dataset.csv')
-    product_category_name_translation_df = pd.read_csv('datasets/product_category_name_translation.csv')
-    products_df = pd.read_csv('datasets/products_dataset.csv')
-    sellers_df = pd.read_csv('datasets/sellers_dataset.csv')
+    customers_df = pd.read_csv(DATASET_DIR / 'customers_dataset.csv')
+    geolocation_df = pd.read_csv(DATASET_DIR / 'geolocation_dataset.csv')
+    order_items_df = pd.read_csv(DATASET_DIR / 'order_items_dataset.csv')
+    order_payments_df = pd.read_csv(DATASET_DIR / 'order_payments_dataset.csv')
+    order_reviews_df = pd.read_csv(DATASET_DIR / 'order_reviews_dataset.csv')
+    orders_df = pd.read_csv(DATASET_DIR / 'orders_dataset.csv')
+    product_category_name_translation_df = pd.read_csv(DATASET_DIR / 'product_category_name_translation.csv')
+    products_df = pd.read_csv(DATASET_DIR / 'products_dataset.csv')
+    sellers_df = pd.read_csv(DATASET_DIR / 'sellers_dataset.csv')
 
     return customers_df, geolocation_df, order_items_df, order_payments_df, \
            order_reviews_df, orders_df, product_category_name_translation_df, \
            products_df, sellers_df
+
+# Contoh pemanggilan
+customers_df, geolocation_df, order_items_df, order_payments_df, \
+order_reviews_df, orders_df, product_category_name_translation_df, \
+products_df, sellers_df = load_data()
 
 # --- 3. Fungsi untuk Pembersihan dan Pra-pemrosesan Data ---
 @st.cache_data
