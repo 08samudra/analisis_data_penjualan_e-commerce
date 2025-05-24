@@ -13,13 +13,13 @@ Ikuti langkah-langkah berikut untuk menyiapkan dan menjalankan proyek ini secara
 Buka terminal di VS Code (Terminal > New Terminal atau \`Ctrl + Shift + \`\`), lalu jalankan:
 
 ```bash
-git clone https://github.com/08samudra/analisis_data_penjualan.git
+git clone https://github.com/08samudra/analisis_data_penjualan_e-commerce.git
 ```
 
 Buka folder proyek:
 
 ```bash
-cd analisis_data_penjualan
+cd analisis_data_penjualan_e-commerce
 ```
 
 ---
@@ -95,13 +95,5 @@ streamlit run main.py
 ```
 
 Aplikasi akan terbuka otomatis di browser pada alamat: [http://localhost:8501](http://localhost:8501)
-
----
-
-## ✅ Fitur Interaktif
-
-* Input angka di sidebar untuk menyesuaikan **ambang batas persentase**
-* Visualisasi data penjualan secara **interaktif**
-* Nama data produk sudah diterjemahkan ke dalam bahasa Inggris
 
 ---
